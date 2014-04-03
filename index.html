@@ -57,6 +57,7 @@
 		<output id="read-file-output">
 			- file content - 
 		</output>
+		<div id="feature-layer-url"></div>
 		<button id="get-feature-id">Get Feature Id</button>
 		<output id="feature-id">Feature Id: -</output>
 		<button id="upload-file">Upload File</button>
@@ -258,6 +259,7 @@
 			if(! checkFileAPIs() )
 				return;
 
+			$('#feature-layer-url').html(featureLayer);
 			$('#attachment-file').on('change',handleFileSelect);
 			$('#read-file').on('click', handleReadFile);
 			$('#get-feature-id').on('click', getFeatureId);
