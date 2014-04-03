@@ -190,7 +190,7 @@
 			{
 				if( featureIds.objectIds.length > 0 )
 				{				
-					featureId = featureIds.objectIds[0];
+					featureId = featureIds.objectIds[featureIds.objectIds.length-1];
 					$('#feature-id').html("Feature Id: " + featureId);
 				}
 				else
@@ -245,7 +245,7 @@
 			oAjaxReq.onload = function(result)
 			{
 				console.log(result);
-				$('#upload-file-output').html(JSON.stringify(result));
+				$('#upload-file-output').html(result.target.response);
 			};
 			oAjaxReq.open("post", featureLayer + "/" + featureId + "/addAttachment", true);
 			var sBoundary = "---------------------------" + Date.now().toString(16);
