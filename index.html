@@ -7,13 +7,14 @@
 	*
 	{
 		font-family: Arial;
+		font-size: 12px;
 	}
 	output 
 	{
 		display: block;
 		background-color: #ddd;
 		padding: 2px;
-		margin: 10px auto;
+		margin: 10px auto 30px auto;
 	}
 	.container
 	{
@@ -57,8 +58,8 @@
 		<output id="read-file-output">
 			- file content - 
 		</output>
-		<div id="feature-layer-url"></div>
-		<button id="get-feature-id">Get Feature Id</button>
+		<div id="feature-layer-url">Feature Layer: </div>
+		<button id="get-feature-id">Get Last Feature Id</button>
 		<output id="feature-id">Feature Id: -</output>
 		<button id="upload-file">Upload File</button>
 		<output id="upload-file-output">
@@ -259,7 +260,14 @@
 			if(! checkFileAPIs() )
 				return;
 
-			$('#feature-layer-url').html(featureLayer);
+			var link = $('<a>')
+				.attr('href',"http://www.arcgis.com/home/webmap/viewer.html?url=" + featureLayer + "&source=sd")
+				.attr('target',"_blank")
+				.html("view map")
+			
+			$('#feature-layer-url')
+				.append(featureLayer + " ")
+				.append(link);
 			$('#attachment-file').on('change',handleFileSelect);
 			$('#read-file').on('click', handleReadFile);
 			$('#get-feature-id').on('click', getFeatureId);
