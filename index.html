@@ -227,18 +227,6 @@
 				return;
 			}
 
-			/*
-			$.ajax({
-				url: featureLayer + "/" + featureId + "/addAttachment",
-				data: { f: 'json' },
-				contentType: 'multipart/form-data',
-				type: "POST"
-			})
-			.done(function(result)
-			{
-				$('#upload-file-output').html(JSON.stringify(result));
-			})
-			*/
 			var segments = [];
 			segments.push( fieldSegment("f","json") );
 			segments.push( fileSegment("attachment", fileName,fileType,fileContent ));
