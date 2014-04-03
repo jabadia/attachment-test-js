@@ -1,6 +1,6 @@
 #Experiment to _indirectly_ upload attachments to a Feature Service
 
-how to read a file from an <input\> into a variable
+how to read a file from an \<input\> into a variable
 see [http://www.html5rocks.com/en/tutorials/file/dndfiles]()
 
 how to upload a file from a variable to a server using ajax multipart/form-data
