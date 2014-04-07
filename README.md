@@ -1,5 +1,8 @@
 #Experiment to _indirectly_ upload attachments to a Feature Service
 
+see online [http://jabadia.github.io/attachment-test-js](http://jabadia.github.io/attachment-test-js "here")
+
+
 how to read a file from an \<input\> into a variable
 see [http://www.html5rocks.com/en/tutorials/file/dndfiles]()
 
