@@ -52,6 +52,10 @@
 			<output class="well" id="upload-file-output">
 				- nothing yet -
 			</output>
+
+			<h2>Step 5. <small>Download file</small></h2>
+			<a href="#" id="the-link" target="_blank">Download file</a><br>
+			<br><br>
 			</div>
 		</div><!-- row -->
 	</div><!-- container -->
@@ -71,6 +75,7 @@
 		var fileContent;
 		var fileType;
 		var fileName;
+		var fileUrl;
 		var featureId;
 
 		function checkFileAPIs()
@@ -138,6 +143,9 @@
 			}
 
 			console.log("reading file", f.name);
+
+			fileUrl = window.URL.createObjectURL(f);
+			$("#the-link").attr("href",fileUrl);
 
 			var reader = new FileReader();
 			// closure para quedarnos con el valor de 'f'
